@@ -1,0 +1,50 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directory
+# https://yarnpkg.com/en/docs/pnpify
+.pnp/
+
+# TypeScript output directory
+dist/
+
+# Optional REPL history
+.node_repl_history
+
+# dotenv environment variables file
+.env
+
+# Visual Studio Code workspace settings
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Th
