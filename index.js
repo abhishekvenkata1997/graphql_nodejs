@@ -10,13 +10,43 @@ const resolvers = {
         games() {
             return db.games //dont worry about which fields to return
         },
+        game(_, args) { //parent, args, context
+            return db.games.find((game) => game.id === args.id)
+        },
         reviews() {
             return db.reviews
         },
+        review(_, args) { //parent, args, context
+            return db.reviews.find((review) => review.id === args.id)
+        },
         authors() {
             return db.authors   
+        },
+        author(_, args) { //parent, args, context
+            return db.authors.find((author) => author.id === args.id)
+        },
+    },
+    //nested Queries
+    Game:  {
+        reviews(parent) { //parent refers to the value returned by parent of this reviews
+            return db.reviews.filter((review) => review.game_id === parent.id)
+        }
+    },
+    Author: {
+        reviews(parent) {
+            return db.reviews.filter((review) => review.author_id === parent.id)
+        }
+    },
+    Review: {
+        author(parent) {
+            return db.authors.find((author) => author.id === parent.author_id)
+        },
+        game(parent) {
+            return db.games.find((game) => game.id === parent.game_id)
         }
     }
+
+
 }
 
 /*
